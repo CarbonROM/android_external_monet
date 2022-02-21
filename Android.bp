@@ -17,5 +17,5 @@ java_library {
     name: "material-color-utilities",
     srcs: ["src/main/java/**/*.java"],
     sdk_version: "current",
-    min_sdk_version: "31",
+    min_sdk_version: "26",
 }
