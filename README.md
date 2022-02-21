@@ -6,20 +6,6 @@ a new color space.
 
 <video autoplay muted loop src="https://user-images.githubusercontent.com/6655696/146014425-8e8e04bc-e646-4cc2-a3e7-97497a3e1b09.mp4" data-canonical-src="https://user-images.githubusercontent.com/6655696/146014425-8e8e04bc-e646-4cc2-a3e7-97497a3e1b09.mp4" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;"></video>
 
-## Library availability
-
-Language    | Availability  | Package
------------ | ------------- | ------------------------------------------------------------------------------------------
-C/C++       | *Coming soon* |
-Dart        | ✅             | [![pub package](https://img.shields.io/pub/v/material_color_utilities.svg)](https://pub.dev/packages/material_color_utilities)
-Java        | ✅             | *Coming soon*
-Objective-C | *Coming soon* |
-TypeScript  | ✅             | [![npm package](https://badgen.net/npm/v/@material/material-color-utilities)](https://npmjs.com/package/@material/material-color-utilities)
-
-Need another platform/language? Check the
-[existing issues](https://github.com/material-foundation/material-color-utilities/labels/new%20library)
-or open a new one.
-
 ## Usage
 
 ### Image to color
@@ -37,11 +23,8 @@ Here's how to do that:
 
 The library is built out of multiple components
 
-*   each with its own folder and tests
+*   each with its own folder
 *   each as small as possible
-
-This enables easy merging and updating of subsets into other libraries, such as
-Material Design Components, Android System UI, etc.
 
 *   Not all consumers will need every component — ex. MDC doesn’t need
     quantization/scoring/image extraction
