@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package hct;
+package org.carbonrom.colorutils.hct;
 
-import utils.ColorUtils;
-import utils.MathUtils;
+import org.carbonrom.colorutils.utils.ColorUtils;
+import org.carbonrom.colorutils.utils.MathUtils;
 
 /**
  * A color system built using CAM16 hue and chroma, and L* from L*a*b*.

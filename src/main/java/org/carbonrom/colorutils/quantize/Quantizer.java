@@ -14,15 +14,8 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.quantize;
 
-import java.util.Map;
-
-/** Represents result of a quantizer run */
-public final class QuantizerResult {
-  public final Map<Integer, Integer> colorToCount;
-
-  QuantizerResult(Map<Integer, Integer> colorToCount) {
-    this.colorToCount = colorToCount;
-  }
+interface Quantizer {
+  public QuantizerResult quantize(int[] pixels, int maxColors);
 }

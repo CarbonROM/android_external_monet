@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package scheme;
+package org.carbonrom.colorutils.scheme;
 
-import palettes.CorePalette;
+import org.carbonrom.colorutils.palettes.CorePalette;
 
 /** Represents a Material color scheme, a mapping of color roles to colors. */
 public class Scheme {

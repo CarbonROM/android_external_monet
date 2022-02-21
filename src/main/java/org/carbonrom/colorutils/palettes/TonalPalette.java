@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package palettes;
+package org.carbonrom.colorutils.palettes;
 
-import hct.Hct;
+import org.carbonrom.colorutils.hct.Hct;
 import java.util.HashMap;
 import java.util.Map;
 

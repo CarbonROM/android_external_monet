@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.quantize;
 
 import static java.lang.Math.min;
 

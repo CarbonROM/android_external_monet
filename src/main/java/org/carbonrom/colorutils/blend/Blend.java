@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package blend;
+package org.carbonrom.colorutils.blend;
 
 import static java.lang.Math.min;
 
-import hct.Cam16;
-import hct.Hct;
-import utils.ColorUtils;
-import utils.MathUtils;
+import org.carbonrom.colorutils.hct.Cam16;
+import org.carbonrom.colorutils.hct.Hct;
+import org.carbonrom.colorutils.utils.ColorUtils;
+import org.carbonrom.colorutils.utils.MathUtils;
 
 /** Functions for blending in HCT and CAM16. */
 public final class Blend {

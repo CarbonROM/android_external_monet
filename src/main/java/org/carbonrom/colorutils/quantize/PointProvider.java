@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.quantize;
 
-interface Quantizer {
-  public QuantizerResult quantize(int[] pixels, int maxColors);
+/** An interface to allow use of different color spaces by quantizers. */
+public interface PointProvider {
+  public float[] fromInt(int argb);
+
+  public int toInt(float[] point);
+
+  public float distance(float[] a, float[] b);
 }

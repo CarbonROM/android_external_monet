@@ -1,0 +1,21 @@
+package {
+    default_applicable_licenses: ["external_material-color-utilities_license"],
+}
+
+license {
+    name: "external_material-color-utilities_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+java_library {
+    name: "material-color-utilities",
+    srcs: ["src/main/java/**/*.java"],
+    sdk_version: "current",
+    min_sdk_version: "31",
+}

@@ -14,13 +14,21 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.utils;
 
-/** An interface to allow use of different color spaces by quantizers. */
-public interface PointProvider {
-  public float[] fromInt(int argb);
+/** Utility methods for string representations of colors. */
+final class StringUtils {
+  private StringUtils() {}
 
-  public int toInt(float[] point);
-
-  public float distance(float[] a, float[] b);
+  /**
+   * Hex string representing color, ex. #ff0000 for red.
+   *
+   * @param argb ARGB representation of a color.
+   */
+  public static String hexFromArgb(int argb) {
+    int red = ColorUtils.redFromArgb(argb);
+    int blue = ColorUtils.blueFromArgb(argb);
+    int green = ColorUtils.greenFromArgb(argb);
+    return String.format("#%02x%02x%02x", red, green, blue);
+  }
 }

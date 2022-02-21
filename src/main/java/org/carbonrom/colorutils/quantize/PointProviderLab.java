@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.quantize;
 
-import utils.ColorUtils;
+import org.carbonrom.colorutils.utils.ColorUtils;
 
 /**
  * Provides conversions needed for K-Means quantization. Converting input to points, and converting

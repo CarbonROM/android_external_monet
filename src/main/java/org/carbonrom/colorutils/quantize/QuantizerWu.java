@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package quantize;
+package org.carbonrom.colorutils.quantize;
 
-import utils.ColorUtils;
+import org.carbonrom.colorutils.utils.ColorUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
