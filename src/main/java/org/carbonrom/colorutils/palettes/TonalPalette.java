@@ -25,8 +25,16 @@ import java.util.Map;
  */
 public final class TonalPalette {
   Map<Integer, Integer> cache;
-  float hue;
-  float chroma;
+  private float hue;
+  private float chroma;
+
+  public float getHue() {
+    return hue;
+  }
+
+  public float getChroma() {
+    return chroma;
+  }
 
   /**
    * Create tones using the HCT hue and chroma from a color.
