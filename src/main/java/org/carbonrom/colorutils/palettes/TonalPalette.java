@@ -1,5 +1,6 @@
 /*
  * Copyright 2021 Google LLC
+ * Copyright 2022 CarbonROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +17,9 @@
 
 package org.carbonrom.colorutils.palettes;
 
-import org.carbonrom.colorutils.hct.Hct;
+import com.android.internal.graphics.cam.Cam;
+import com.android.internal.graphics.cam.Frame;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,21 +40,21 @@ public final class TonalPalette {
   }
 
   /**
-   * Create tones using the HCT hue and chroma from a color.
+   * Create tones using the CAM hue and chroma from a color.
    *
    * @param argb ARGB representation of a color
    * @return Tones matching that color's hue and chroma.
    */
   public static final TonalPalette fromInt(int argb) {
-    Hct hct = Hct.fromInt(argb);
-    return TonalPalette.fromHueAndChroma(hct.getHue(), hct.getChroma());
+    Cam cam = Cam.fromInt(argb);
+    return TonalPalette.fromHueAndChroma(cam.getHue(), cam.getChroma());
   }
 
   /**
-   * Create tones from a defined HCT hue and chroma.
+   * Create tones from a defined CAM hue and chroma.
    *
-   * @param hue HCT hue
-   * @param chroma HCT chroma
+   * @param hue CAM hue
+   * @param chroma CAM chroma
    * @return Tones matching hue and chroma.
    */
   public static final TonalPalette fromHueAndChroma(float hue, float chroma) {
@@ -67,10 +70,10 @@ public final class TonalPalette {
   /**
    * Create an ARGB color with HCT hue and chroma of this Tones instance, and the provided HCT tone.
    *
-   * @param tone HCT tone, measured from 0 to 100.
+   * @param tone Cam tone, measured from 0 to 100.
    * @return ARGB representation of a color with that tone.
    */
   public int tone(int tone) {
-    return cache.computeIfAbsent(tone, k -> Hct.from(this.hue, this.chroma, tone).toInt());
+    return cache.computeIfAbsent(tone, k -> Cam.getInt(this.hue, this.chroma, tone, Frame.DEFAULT));
   }
 }

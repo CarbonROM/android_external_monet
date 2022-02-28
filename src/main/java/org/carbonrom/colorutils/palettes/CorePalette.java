@@ -1,5 +1,6 @@
 /*
  * Copyright 2021 Google LLC
+ * Copyright 2022 CarbonROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@ package org.carbonrom.colorutils.palettes;
 
 import static java.lang.Math.max;
 
-import org.carbonrom.colorutils.hct.Hct;
+import com.android.internal.graphics.cam.Cam;
 
 /**
  * An intermediate concept between the key color for a UI theme, and a full color scheme. 5 sets of
@@ -42,11 +43,11 @@ public final class CorePalette {
   }
 
   private CorePalette(int argb) {
-    Hct hct = Hct.fromInt(argb);
-    float hue = hct.getHue();
-    this.a1 = TonalPalette.fromHueAndChroma(hue, max(48f, hct.getChroma()));
+    Cam cam = Cam.fromInt(argb);
+    float hue = cam.getHue();
+    this.a1 = TonalPalette.fromHueAndChroma(hue, max(48f, cam.getChroma()));
     this.a2 = TonalPalette.fromHueAndChroma(hue, 16f);
-    this.a3 = TonalPalette.fromHueAndChroma(hue + 60f, 24f);
+    this.a3 = TonalPalette.fromHueAndChroma(hue + 60f, 32f);
     this.n1 = TonalPalette.fromHueAndChroma(hue, 4f);
     this.n2 = TonalPalette.fromHueAndChroma(hue, 8f);
     this.error = TonalPalette.fromHueAndChroma(25, 84f);

@@ -16,6 +16,5 @@ license {
 java_library {
     name: "material-color-utilities",
     srcs: ["src/main/java/**/*.java"],
-    sdk_version: "current",
-    min_sdk_version: "26",
+    platform_apis: true,
 }
