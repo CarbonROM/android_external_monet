@@ -15,6 +15,9 @@ license {
 
 java_library {
     name: "material-color-utilities",
-    srcs: ["src/main/java/**/*.java"],
+    srcs: [
+        "src/main/java/**/*.java",
+        "src/main/java/**/*.kt",
+    ],
     platform_apis: true,
 }

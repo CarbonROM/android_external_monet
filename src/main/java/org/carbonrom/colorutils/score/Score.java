@@ -32,9 +32,9 @@ import java.util.Map;
  * muddied, while curating the high cluster count to a much smaller number of appropriate choices.
  */
 public final class Score {
-  private static final float CUTOFF_CHROMA = 15f;
+  public static final float CUTOFF_CHROMA = 15f;
   private static final float CUTOFF_EXCITED_PROPORTION = 0.01f;
-  private static final float CUTOFF_TONE = 10f;
+  public static final float CUTOFF_TONE = 10f;
   private static final float TARGET_CHROMA = 48f;
   private static final float WEIGHT_PROPORTION = 0.7f;
   private static final float WEIGHT_CHROMA_ABOVE = 0.3f;
