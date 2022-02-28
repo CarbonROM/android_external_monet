@@ -32,11 +32,6 @@ public class ColorUtils {
     return (255 << 24) | ((red & 255) << 16) | ((green & 255) << 8) | (blue & 255);
   }
 
-  /** Returns the alpha component of a color in ARGB format. */
-  public static int alphaFromArgb(int argb) {
-    return (argb >> 24) & 255;
-  }
-
   /** Returns the red component of a color in ARGB format. */
   public static int redFromArgb(int argb) {
     return (argb >> 16) & 255;
@@ -50,11 +45,6 @@ public class ColorUtils {
   /** Returns the blue component of a color in ARGB format. */
   public static int blueFromArgb(int argb) {
     return argb & 255;
-  }
-
-  /** Returns whether a color in ARGB format is opaque. */
-  public static boolean isOpaque(int argb) {
-    return alphaFromArgb(argb) >= 255;
   }
 
   /** Returns the sRGB to XYZ transformation matrix. */
@@ -90,63 +80,6 @@ public class ColorUtils {
     double g = linearized(greenFromArgb(argb));
     double b = linearized(blueFromArgb(argb));
     return MathUtils.matrixMultiply(new double[] {r, g, b}, srgbToXyz());
-  }
-
-  /** Converts a color represented in Lab color space into an ARGB integer. */
-  public static int argbFromLab(double l, double a, double b) {
-    double[] whitePoint = whitePointD65();
-    double fy = (l + 16.0) / 116.0;
-    double fx = a / 500.0 + fy;
-    double fz = fy - b / 200.0;
-    double xNormalized = labInvf(fx);
-    double yNormalized = labInvf(fy);
-    double zNormalized = labInvf(fz);
-    double x = xNormalized * whitePoint[0];
-    double y = yNormalized * whitePoint[1];
-    double z = zNormalized * whitePoint[2];
-    return argbFromXyz(x, y, z);
-  }
-
-  /**
-   * Converts a color from ARGB representation to L*a*b* representation.
-   *
-   * @param argb the ARGB representation of a color
-   * @return a Lab object representing the color
-   */
-  public static double[] labFromArgb(int argb) {
-    double[] whitePoint = whitePointD65();
-    double[] xyz = xyzFromArgb(argb);
-    double xNormalized = xyz[0] / whitePoint[0];
-    double yNormalized = xyz[1] / whitePoint[1];
-    double zNormalized = xyz[2] / whitePoint[2];
-    double fx = labF(xNormalized);
-    double fy = labF(yNormalized);
-    double fz = labF(zNormalized);
-    double l = 116.0 * fy - 16;
-    double a = 500.0 * (fx - fy);
-    double b = 200.0 * (fy - fz);
-    return new double[] {l, a, b};
-  }
-
-  /**
-   * Converts an L* value to an ARGB representation.
-   *
-   * @param lstar L* in L*a*b*
-   * @return ARGB representation of grayscale color with lightness matching L*
-   */
-  public static int argbFromLstar(double lstar) {
-    double fy = (lstar + 16.0) / 116.0;
-    double fz = fy;
-    double fx = fy;
-    double kappa = 24389.0 / 27.0;
-    double epsilon = 216.0 / 24389.0;
-    boolean lExceedsEpsilonKappa = lstar > 8.0;
-    double y = lExceedsEpsilonKappa ? fy * fy * fy : lstar / kappa;
-    boolean cubeExceedEpsilon = fy * fy * fy > epsilon;
-    double x = cubeExceedEpsilon ? fx * fx * fx : lstar / kappa;
-    double z = cubeExceedEpsilon ? fz * fz * fz : lstar / kappa;
-    double[] whitePoint = whitePointD65();
-    return argbFromXyz(x * whitePoint[0], y * whitePoint[1], z * whitePoint[2]);
   }
 
   /**
@@ -225,27 +158,6 @@ public class ColorUtils {
    */
   public static double[] whitePointD65() {
     return new double[] {95.047, 100.0, 108.883};
-  }
-
-  static double labF(double t) {
-    double e = 216.0 / 24389.0;
-    double kappa = 24389.0 / 27.0;
-    if (t > e) {
-      return Math.pow(t, 1.0 / 3.0);
-    } else {
-      return (kappa * t + 16) / 116;
-    }
-  }
-
-  static double labInvf(double ft) {
-    double e = 216.0 / 24389.0;
-    double kappa = 24389.0 / 27.0;
-    double ft3 = ft * ft * ft;
-    if (ft3 > e) {
-      return ft3;
-    } else {
-      return (116 * ft - 16) / kappa;
-    }
   }
 
 }

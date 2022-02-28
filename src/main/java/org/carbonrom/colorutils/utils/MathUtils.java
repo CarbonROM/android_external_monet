@@ -23,32 +23,6 @@ public class MathUtils {
   private MathUtils() {}
 
   /**
-   * The signum function.
-   *
-   * @return 1 if num > 0, -1 if num < 0, and 0 if num = 0
-   */
-  public static int signum(double num) {
-    if (num < 0) {
-      return -1;
-    } else {
-      if (num == 0) {
-        return 0;
-      } else {
-        return 1;
-      }
-    }
-  }
-
-  /**
-   * The linear interpolation function.
-   *
-   * @return start if amount = 0 and stop if amount = 1
-   */
-  public static double lerp(double start, double stop, double amount) {
-    return (1.0 - amount) * start + amount * stop;
-  }
-
-  /**
    * Clamps an integer between two integers.
    *
    * @return input when min <= input <= max, and either min or max otherwise.
@@ -65,19 +39,12 @@ public class MathUtils {
   }
 
   /**
-   * Clamps an integer between two floating-point numbers.
+   * The linear interpolation function.
    *
-   * @return input when min <= input <= max, and either min or max otherwise.
+   * @return start if amount = 0 and stop if amount = 1
    */
-  public static double clampDouble(double min, double max, double input) {
-    if (input < min) {
-      return min;
-    } else {
-      if (input > max) {
-        return max;
-      }
-    }
-    return input;
+  public static double lerp(double start, double stop, double amount) {
+    return (1.0 - amount) * start + amount * stop;
   }
 
   /**
@@ -89,19 +56,6 @@ public class MathUtils {
     degrees = degrees % 360;
     if (degrees < 0) {
       degrees = degrees + 360;
-    }
-    return degrees;
-  }
-
-  /**
-   * Sanitizes a degree measure as a floating-point number.
-   *
-   * @return a degree measure between 0.0 (inclusive) and 360.0 (exclusive).
-   */
-  public static double sanitizeDegreesDouble(double degrees) {
-    degrees = degrees % 360.0;
-    if (degrees < 0) {
-      degrees = degrees + 360.0;
     }
     return degrees;
   }

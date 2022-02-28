@@ -31,7 +31,6 @@ public final class CorePalette {
   public TonalPalette a3;
   public TonalPalette n1;
   public TonalPalette n2;
-  public TonalPalette error;
 
   /**
    * Create key tones from a color.
@@ -50,6 +49,5 @@ public final class CorePalette {
     this.a3 = TonalPalette.fromHueAndChroma(hue + 60f, 32f);
     this.n1 = TonalPalette.fromHueAndChroma(hue, 4f);
     this.n2 = TonalPalette.fromHueAndChroma(hue, 8f);
-    this.error = TonalPalette.fromHueAndChroma(25, 84f);
   }
 }
