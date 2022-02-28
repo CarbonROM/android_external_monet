@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils
+package org.carbonrom.monet
 
 import android.app.WallpaperColors
 import android.graphics.Color
@@ -23,8 +23,8 @@ import com.android.internal.graphics.cam.Cam
 import com.android.internal.graphics.cam.CamUtils
 import com.android.internal.graphics.ColorUtils
 
-import org.carbonrom.colorutils.palettes.CorePalette
-import org.carbonrom.colorutils.score.Score
+import org.carbonrom.monet.palettes.CorePalette
+import org.carbonrom.monet.score.Score
 
 const val GOOGLE_BLUE = 0xff4285F4.toInt()
 

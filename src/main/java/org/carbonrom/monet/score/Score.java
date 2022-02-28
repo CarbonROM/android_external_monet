@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils.score;
+package org.carbonrom.monet.score;
 
-import org.carbonrom.colorutils.hct.Cam16;
-import org.carbonrom.colorutils.utils.ColorUtils;
-import org.carbonrom.colorutils.utils.MathUtils;
+import org.carbonrom.monet.hct.Cam16;
+import org.carbonrom.monet.utils.ColorUtils;
+import org.carbonrom.monet.utils.MathUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

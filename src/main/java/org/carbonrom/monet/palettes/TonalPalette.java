@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils.palettes;
+package org.carbonrom.monet.palettes;
 
 import com.android.internal.graphics.cam.Cam;
 import com.android.internal.graphics.cam.Frame;

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils.hct;
+package org.carbonrom.monet.hct;
 
-import org.carbonrom.colorutils.utils.ColorUtils;
-import org.carbonrom.colorutils.utils.MathUtils;
+import org.carbonrom.monet.utils.ColorUtils;
+import org.carbonrom.monet.utils.MathUtils;
 
 /**
  * In traditional color spaces, a color can be identified solely by the observer's measurement of

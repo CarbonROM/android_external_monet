@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils.palettes;
+package org.carbonrom.monet.palettes;
 
 import static java.lang.Math.max;
 

@@ -1,9 +1,9 @@
 package {
-    default_applicable_licenses: ["external_material-color-utilities_license"],
+    default_applicable_licenses: ["external_monet_license"],
 }
 
 license {
-    name: "external_material-color-utilities_license",
+    name: "external_monet_license",
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-Apache-2.0",
@@ -14,7 +14,7 @@ license {
 }
 
 java_library {
-    name: "material-color-utilities",
+    name: "monet",
     srcs: [
         "src/main/java/**/*.java",
         "src/main/java/**/*.kt",

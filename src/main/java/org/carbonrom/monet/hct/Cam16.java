@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package org.carbonrom.colorutils.hct;
+package org.carbonrom.monet.hct;
 
 import static java.lang.Math.max;
 
-import org.carbonrom.colorutils.utils.ColorUtils;
+import org.carbonrom.monet.utils.ColorUtils;
 
 /**
  * CAM16, a color appearance model. Colors are not just defined by their hex code, but rather, a hex
